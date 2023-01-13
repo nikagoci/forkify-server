@@ -3,7 +3,7 @@ const APIFeatures = require("../utils/apiFeatures");
 
 exports.getAllRecipe = async (req, res) => {
   try {    
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'https://fullforkify.onrender.com');
     const features = new APIFeatures(Recipe.find(), req.query)
     .filter()
     .sort()
@@ -37,7 +37,7 @@ exports.getAllRecipe = async (req, res) => {
 
 exports.getRecipe = async (req, res) => {
   try {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'https://fullforkify.onrender.com');
     const singleRecipe = await Recipe.findById(req.params.id);
 
     res.status(200).json({
@@ -54,7 +54,7 @@ exports.getRecipe = async (req, res) => {
 
 exports.addRecipe = async (req, res) => {
   try {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'https://fullforkify.onrender.com');
     const newRecipe = await Recipe.create(req.body);
 
     res.status(201).json({
